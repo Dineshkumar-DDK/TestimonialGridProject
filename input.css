@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  /* // normal css */
+  h1 {
+    font-size: 2rem;
+  }
+
+  body {
+    background-image: url("images/bg-header-desktop.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-color: black; */
+  }
+
+  @media (max-width: 576px) {
+    body {
+      background-image: url("images/bg-header-mobile.png");
+      /* background-color: black; */
+    }
+  }
+
+
+
+@theme {
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-xl: 1440px;
+  --color-StrongCyan: hsl(171, 66%, 44%);
+  --color-lightBlue: hsl(233, 100%, 69%);
+  --color-darkGrayishBlue: hsl(210, 10%, 33%);
+  --grayishBlue: hsl(201, 11%, 66%);
+  --font-sans: "Bai Jamjuree", sans-serif;
+}
+
+  /* // avl tailwind classes */
+  h2 {
+    @apply text-3xl font-bold text-red-800;
+  }
+
+  h3 {
+    @apply text-4xl md:text-5xl font-bold text-darkGrayishBlue mb-8;
+  }
+
+  h5 {
+    @apply text-2xl font-bold text-darkGrayishBlue mb-2;
+  }
+}
+
+.section-container {
+  @apply text-center mx-auto max-w-6xl px-10;
+}
+
+.section-content {
+  @apply max-w-3xl text-center text-xl text-grayishBlue mx-auto leading-9;
+}
+
+.button-container {
+  @apply flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8 w-full text-xl text-white;
+}
+
+/* // boot strap like classes */
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700;
+  }
+}
+
+.custom-classes {
+  @apply text-red-500 font-bold;
+  @apply text-3xl;
+  @apply border border-gray-300;
+  @apply p-4;
+  @apply rounded-lg;
+}
